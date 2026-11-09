@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f7f9fb;
+  color: #11202e;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Чуть крупнее греческий текст для читаемости */
+.greek {
+  font-family: 'Noto Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* Единый стиль текстовых полей в формах редактора */
+.input {
+  width: 100%;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+}
+.input:focus {
+  border-color: #0d3b66;
+}
