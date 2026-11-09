@@ -7,7 +7,7 @@ export function ProgressBar({ position, total }: { position: number; total: numb
   return (
     <div className="mb-6 h-2 w-full overflow-hidden rounded-full bg-slate-200">
       <div
-        className="h-full rounded-full bg-[#0d3b66] transition-all"
+        className="h-full rounded-full bg-brand transition-all"
         style={{ width: `${pct}%` }}
       />
     </div>
@@ -37,7 +37,7 @@ export function Done({ count, children }: { count: number; children?: ReactNode 
   return (
     <div className="mt-10 text-center">
       <div className="text-6xl">🎉</div>
-      <h2 className="mt-4 text-2xl font-bold text-[#0d3b66]">Μπράβο!</h2>
+      <h2 className="mt-4 text-2xl font-bold text-brand">Μπράβο!</h2>
       <p className="mt-1 text-slate-500">Повторено слов: {count}</p>
       {children}
       <div className="mt-6 flex justify-center gap-3">

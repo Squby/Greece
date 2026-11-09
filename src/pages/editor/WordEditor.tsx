@@ -75,10 +75,10 @@ export default function WordEditor() {
 
   return (
     <div>
-      <Link to="/editor" className="mb-3 inline-block text-sm text-[#0d3b66]">
+      <Link to="/editor" className="mb-3 inline-block text-sm text-brand">
         ← Редактор
       </Link>
-      <h1 className="mb-4 text-xl font-bold text-[#0d3b66]">
+      <h1 className="mb-4 text-xl font-bold text-brand">
         {editingId != null ? 'Редактировать слово' : 'Новое слово'}
       </h1>
 
@@ -140,7 +140,7 @@ export default function WordEditor() {
         {words?.map((w) => (
           <div
             key={w.id}
-            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3"
+            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-card p-3"
           >
             <div className="min-w-0 flex-1">
               <div className="greek truncate font-semibold text-slate-800">{w.greek}</div>

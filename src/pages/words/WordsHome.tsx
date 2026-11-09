@@ -17,7 +17,7 @@ export default function WordsHome() {
 
       <Card className="mb-5 text-center">
         <div className="text-sm text-slate-500">Готово к повторению сейчас</div>
-        <div className="text-4xl font-bold text-[#0d3b66]">{dueCount}</div>
+        <div className="text-4xl font-bold text-brand">{dueCount}</div>
         <div className="mt-1 text-xs text-slate-400">из {total} слов всего</div>
       </Card>
 

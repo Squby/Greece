@@ -1,7 +1,37 @@
 @import 'tailwindcss';
 
+/* Токены темы: brand — акцент, card — фон карточек */
+@theme {
+  --color-brand: #0d3b66;
+  --color-card: #ffffff;
+}
+
 :root {
   color-scheme: light;
+  --bg: #f7f9fb;
+  --fg: #11202e;
+}
+
+/* Тёмная тема: переопределяем токены и часть палитры slate.
+   Утилиты Tailwind ссылаются на эти CSS-переменные, поэтому цвета меняются
+   глобально без правок в компонентах. */
+.dark {
+  color-scheme: dark;
+  --bg: #0f172a;
+  --fg: #e7edf5;
+
+  --color-card: #1e293b;
+  --color-brand: #5b9bf0;
+
+  --color-slate-50: #273449;
+  --color-slate-100: #334155;
+  --color-slate-200: #334155;
+  --color-slate-300: #475569;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #a3b2c7;
+  --color-slate-600: #cbd5e1;
+  --color-slate-700: #d7dfea;
+  --color-slate-800: #e7edf5;
 }
 
 html,
@@ -12,8 +42,8 @@ body,
 
 body {
   margin: 0;
-  background: #f7f9fb;
-  color: #11202e;
+  background: var(--bg);
+  color: var(--fg);
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
@@ -27,13 +57,14 @@ body {
 /* Единый стиль текстовых полей в формах редактора */
 .input {
   width: 100%;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--color-slate-200);
   border-radius: 0.75rem;
   padding: 0.6rem 0.9rem;
   font-size: 1rem;
   outline: none;
-  background: #fff;
+  background: var(--color-card);
+  color: var(--fg);
 }
 .input:focus {
-  border-color: #0d3b66;
+  border-color: var(--color-brand);
 }

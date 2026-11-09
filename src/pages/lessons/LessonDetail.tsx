@@ -36,10 +36,10 @@ export default function LessonDetail() {
 
   return (
     <div>
-      <Link to="/lessons" className="mb-3 inline-block text-sm text-[#0d3b66]">
+      <Link to="/lessons" className="mb-3 inline-block text-sm text-brand">
         ← Уроки
       </Link>
-      <h1 className="mb-1 text-xl font-bold text-[#0d3b66]">{lesson.title}</h1>
+      <h1 className="mb-1 text-xl font-bold text-brand">{lesson.title}</h1>
       {lesson.summary && <p className="mb-4 text-sm text-slate-500">{lesson.summary}</p>}
 
       {/* Грамматика урока */}
@@ -53,7 +53,7 @@ export default function LessonDetail() {
               <Link
                 key={t.id}
                 to={`/grammar/topic/${t.id}`}
-                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm active:scale-[0.98]"
+                className="rounded-2xl border border-slate-200 bg-card p-4 shadow-sm active:scale-[0.98]"
               >
                 <span className="font-medium text-slate-800">{t.title}</span>
               </Link>
@@ -66,7 +66,7 @@ export default function LessonDetail() {
       <section className="mb-6">
         <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-slate-400">
           Слова · {total}
-          {dueCount > 0 && <span className="ml-2 text-[#0d3b66]">({dueCount} на повторение)</span>}
+          {dueCount > 0 && <span className="ml-2 text-brand">({dueCount} на повторение)</span>}
         </h2>
         {total === 0 ? (
           <Empty>В этом уроке пока нет слов.</Empty>

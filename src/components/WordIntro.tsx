@@ -107,7 +107,7 @@ export default function WordIntro({
 
   return (
     <div>
-      <h1 className="mb-1 text-2xl font-bold text-[#0d3b66]">{title}</h1>
+      <h1 className="mb-1 text-2xl font-bold text-brand">{title}</h1>
       <p className="mb-5 text-sm text-slate-500">Как это работает — на примере:</p>
 
       <Card className="mb-5">

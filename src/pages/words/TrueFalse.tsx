@@ -100,7 +100,7 @@ export default function TrueFalse() {
           )}
           <button
             onClick={next}
-            className="mt-6 w-full rounded-xl bg-[#0d3b66] px-5 py-3 font-semibold text-white active:scale-[0.98]"
+            className="mt-6 w-full rounded-xl bg-brand px-5 py-3 font-semibold text-white active:scale-[0.98]"
           >
             Дальше
           </button>

@@ -29,12 +29,12 @@ export default function LessonsPath() {
               <Link
                 key={l.slug}
                 to={`/lessons/${l.slug}`}
-                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm active:scale-[0.98]"
+                className="rounded-2xl border border-slate-200 bg-card p-4 shadow-sm active:scale-[0.98]"
               >
                 <div className="flex items-center gap-3">
                   <span
                     className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-bold ${
-                      complete ? 'bg-emerald-500 text-white' : 'bg-[#0d3b66] text-white'
+                      complete ? 'bg-emerald-500 text-white' : 'bg-brand text-white'
                     }`}
                   >
                     {complete ? '✓' : l.order}
@@ -50,7 +50,7 @@ export default function LessonsPath() {
                 <div className="mt-3 flex items-center gap-2">
                   <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-200">
                     <div
-                      className="h-full rounded-full bg-[#0d3b66] transition-all"
+                      className="h-full rounded-full bg-brand transition-all"
                       style={{ width: `${pct}%` }}
                     />
                   </div>

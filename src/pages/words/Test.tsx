@@ -101,7 +101,7 @@ export default function Test() {
       <div>
         <div className="mt-4 text-center">
           <div className="text-6xl">{score === results.length ? '🏆' : '📋'}</div>
-          <h2 className="mt-3 text-2xl font-bold text-[#0d3b66]">
+          <h2 className="mt-3 text-2xl font-bold text-brand">
             {score} / {results.length}
           </h2>
           <p className="mt-1 text-slate-500">правильных ответов</p>
@@ -200,7 +200,7 @@ function ChoiceQ({
           <button
             key={opt}
             onClick={() => onAnswer(opt === q.correct, opt)}
-            className="rounded-xl border-2 border-slate-200 bg-white px-4 py-4 text-left text-lg font-medium text-slate-800 active:scale-[0.99]"
+            className="rounded-xl border-2 border-slate-200 bg-card px-4 py-4 text-left text-lg font-medium text-slate-800 active:scale-[0.99]"
           >
             {opt}
           </button>
@@ -270,7 +270,7 @@ function WrittenQ({
         onKeyDown={(e) => e.key === 'Enter' && submit()}
         autoFocus
         placeholder="γράψε εδώ…"
-        className="greek w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-[#0d3b66]"
+        className="greek w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-brand"
       />
       <GreekKeyboard onInsert={(ch) => setInput(input + ch)} />
       <Button className="mt-4 w-full" onClick={submit} disabled={disabled}>

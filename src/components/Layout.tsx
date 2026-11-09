@@ -1,4 +1,5 @@
 import { Outlet, NavLink } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 const tabs = [
   { to: '/', label: 'Главная', icon: '🏠', end: true },
@@ -10,11 +11,14 @@ const tabs = [
 export default function Layout() {
   return (
     <div className="mx-auto flex min-h-full max-w-xl flex-col">
-      <main className="flex-1 px-4 pb-24 pt-5">
+      <div className="flex justify-end px-4 pt-3">
+        <ThemeToggle />
+      </div>
+      <main className="flex-1 px-4 pb-24 pt-3">
         <Outlet />
       </main>
 
-      <nav className="fixed inset-x-0 bottom-0 border-t border-slate-200 bg-white/95 backdrop-blur">
+      <nav className="fixed inset-x-0 bottom-0 border-t border-slate-200 bg-card/95 backdrop-blur">
         <div className="mx-auto flex max-w-xl">
           {tabs.map((t) => (
             <NavLink
@@ -23,7 +27,7 @@ export default function Layout() {
               end={t.end}
               className={({ isActive }) =>
                 `flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs font-medium transition-colors ${
-                  isActive ? 'text-[#0d3b66]' : 'text-slate-400'
+                  isActive ? 'text-brand' : 'text-slate-400'
                 }`
               }
             >

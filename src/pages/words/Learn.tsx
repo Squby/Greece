@@ -145,11 +145,11 @@ export default function Learn() {
           {options.map((opt) => {
             const isCorrect = opt === w.translation
             const isPicked = opt === picked
-            let style = 'border-slate-200 bg-white text-slate-800'
+            let style = 'border-slate-200 bg-card text-slate-800'
             if (answered) {
               if (isCorrect) style = 'border-emerald-400 bg-emerald-50 text-emerald-800'
               else if (isPicked) style = 'border-rose-400 bg-rose-50 text-rose-800'
-              else style = 'border-slate-200 bg-white text-slate-400'
+              else style = 'border-slate-200 bg-card text-slate-400'
             }
             return (
               <button
@@ -178,7 +178,7 @@ export default function Learn() {
             disabled={answered !== null}
             autoFocus
             placeholder="γράψε εδώ…"
-            className="greek w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-[#0d3b66] disabled:bg-slate-50"
+            className="greek w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-brand disabled:bg-slate-50"
           />
           {answered === null && <GreekKeyboard onInsert={(ch) => setInput((v) => v + ch)} />}
         </div>
@@ -196,7 +196,7 @@ export default function Learn() {
           )}
           <button
             onClick={next}
-            className="mt-4 w-full rounded-xl bg-[#0d3b66] px-5 py-3 font-semibold text-white active:scale-[0.98]"
+            className="mt-4 w-full rounded-xl bg-brand px-5 py-3 font-semibold text-white active:scale-[0.98]"
           >
             Дальше
           </button>

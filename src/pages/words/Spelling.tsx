@@ -59,7 +59,7 @@ export default function Spelling() {
           disabled={result !== null}
           autoFocus
           placeholder="γράψε εδώ…"
-          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-[#0d3b66] disabled:bg-slate-50"
+          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-brand disabled:bg-slate-50"
         />
 
         {result === null && <GreekKeyboard onInsert={(ch) => setInput((v) => v + ch)} />}

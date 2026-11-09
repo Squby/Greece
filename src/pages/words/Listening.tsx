@@ -74,7 +74,7 @@ export default function Listening() {
 
         <button
           onClick={() => speakGreek(w.greek)}
-          className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#0d3b66] text-5xl text-white shadow-lg active:scale-95"
+          className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand text-5xl text-white shadow-lg active:scale-95"
           aria-label="Повторить звук"
         >
           🔊
@@ -88,7 +88,7 @@ export default function Listening() {
           disabled={result !== null}
           autoFocus
           placeholder="γράψε εδώ…"
-          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-[#0d3b66] disabled:bg-slate-50"
+          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-2xl outline-none focus:border-brand disabled:bg-slate-50"
         />
 
         {result === null && <GreekKeyboard onInsert={(ch) => setInput((v) => v + ch)} />}

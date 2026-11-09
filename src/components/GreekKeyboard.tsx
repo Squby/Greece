@@ -18,7 +18,7 @@ export default function GreekKeyboard({ onInsert }: { onInsert: (ch: string) => 
               key={ch}
               type="button"
               onClick={() => onInsert(ch)}
-              className="greek h-9 w-9 rounded-lg border border-slate-200 bg-white text-lg text-slate-700 shadow-sm active:scale-95"
+              className="greek h-9 w-9 rounded-lg border border-slate-200 bg-card text-lg text-slate-700 shadow-sm active:scale-95"
             >
               {ch}
             </button>

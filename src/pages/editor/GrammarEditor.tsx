@@ -13,10 +13,10 @@ export default function GrammarEditor() {
 
   return (
     <div>
-      <Link to="/editor" className="mb-3 inline-block text-sm text-[#0d3b66]">
+      <Link to="/editor" className="mb-3 inline-block text-sm text-brand">
         ← Редактор
       </Link>
-      <h1 className="mb-4 text-xl font-bold text-[#0d3b66]">Грамматика</h1>
+      <h1 className="mb-4 text-xl font-bold text-brand">Грамматика</h1>
 
       <div className="mb-5 flex gap-2">
         <TabButton active={tab === 'topics'} onClick={() => setTab('topics')}>
@@ -45,7 +45,7 @@ function TabButton({
     <button
       onClick={onClick}
       className={`flex-1 rounded-xl py-2.5 font-semibold transition ${
-        active ? 'bg-[#0d3b66] text-white' : 'bg-slate-100 text-slate-600'
+        active ? 'bg-brand text-white' : 'bg-slate-100 text-slate-600'
       }`}
     >
       {children}
@@ -143,7 +143,7 @@ function TopicsEditor() {
         {topics?.map((t) => (
           <div
             key={t.id}
-            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3"
+            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-card p-3"
           >
             <div className="min-w-0 flex-1 truncate font-medium text-slate-800">{t.title}</div>
             <button onClick={() => startEdit(t)} className="text-lg" aria-label="Изменить">
@@ -274,7 +274,7 @@ function ExercisesEditor() {
         {exercises?.map((ex) => (
           <div
             key={ex.id}
-            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3"
+            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-card p-3"
           >
             <div className="greek min-w-0 flex-1 truncate text-sm text-slate-700">{ex.prompt}</div>
             <button onClick={() => startEdit(ex)} className="text-lg" aria-label="Изменить">

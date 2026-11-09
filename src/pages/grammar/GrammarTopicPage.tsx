@@ -24,10 +24,10 @@ export default function GrammarTopicPage() {
 
   return (
     <div>
-      <Link to="/grammar" className="mb-3 inline-block text-sm text-[#0d3b66]">
+      <Link to="/grammar" className="mb-3 inline-block text-sm text-brand">
         ← Грамматика
       </Link>
-      <h1 className="mb-4 text-xl font-bold text-[#0d3b66]">{topic.title}</h1>
+      <h1 className="mb-4 text-xl font-bold text-brand">{topic.title}</h1>
 
       <Card>
         {/* Текст правила с сохранением переносов строк */}

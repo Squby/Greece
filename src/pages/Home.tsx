@@ -37,7 +37,7 @@ export default function Home() {
           desc="Слова из всех уроков — карточки, по буквам, на слух"
           badge={
             dueCount > 0 ? (
-              <span className="rounded-full bg-[#0d3b66] px-2.5 py-1 text-xs font-bold text-white">
+              <span className="rounded-full bg-brand px-2.5 py-1 text-xs font-bold text-white">
                 {dueCount}
               </span>
             ) : undefined
@@ -52,7 +52,7 @@ export default function Home() {
 function Stat({ value, label, accent }: { value: number; label: string; accent?: boolean }) {
   return (
     <div>
-      <div className={`text-3xl font-bold ${accent ? 'text-[#0d3b66]' : 'text-slate-800'}`}>
+      <div className={`text-3xl font-bold ${accent ? 'text-brand' : 'text-slate-800'}`}>
         {value}
       </div>
       <div className="mt-0.5 text-xs text-slate-500">{label}</div>

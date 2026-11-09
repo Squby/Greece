@@ -124,7 +124,7 @@ export default function Match() {
     return (
       <div className="mt-10 text-center">
         <div className="text-6xl">🏆</div>
-        <h2 className="mt-4 text-2xl font-bold text-[#0d3b66]">Все пары собраны!</h2>
+        <h2 className="mt-4 text-2xl font-bold text-brand">Все пары собраны!</h2>
         <p className="mt-1 text-slate-500">
           Время: {mm}:{ss}
         </p>
@@ -144,7 +144,7 @@ export default function Match() {
   return (
     <div>
       <div className="mb-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-[#0d3b66]">🧩 Подбор пар</h1>
+        <h1 className="text-xl font-bold text-brand">🧩 Подбор пар</h1>
         <span className="rounded-lg bg-slate-100 px-3 py-1 font-mono text-slate-600">
           {mm}:{ss}
         </span>
@@ -155,10 +155,10 @@ export default function Match() {
           const isMatched = matched.has(t.tid)
           const isSelected = selected?.tid === t.tid
           const isWrong = wrong.has(t.tid)
-          let style = 'border-slate-200 bg-white text-slate-800'
+          let style = 'border-slate-200 bg-card text-slate-800'
           if (isMatched) style = 'border-transparent bg-transparent text-transparent'
           else if (isWrong) style = 'border-rose-400 bg-rose-50 text-rose-700'
-          else if (isSelected) style = 'border-[#0d3b66] bg-sky-50 text-[#0d3b66]'
+          else if (isSelected) style = 'border-brand bg-sky-50 text-brand'
           return (
             <button
               key={t.tid}

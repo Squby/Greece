@@ -4,7 +4,7 @@ import type { ReactNode } from 'react'
 export function PageTitle({ children, sub }: { children: ReactNode; sub?: string }) {
   return (
     <header className="mb-5">
-      <h1 className="text-2xl font-bold text-[#0d3b66]">{children}</h1>
+      <h1 className="text-2xl font-bold text-brand">{children}</h1>
       {sub && <p className="mt-1 text-sm text-slate-500">{sub}</p>}
     </header>
   )
@@ -18,7 +18,7 @@ export function Card({
   className?: string
 }) {
   return (
-    <div className={`rounded-2xl border border-slate-200 bg-white p-5 shadow-sm ${className}`}>
+    <div className={`rounded-2xl border border-slate-200 bg-card p-5 shadow-sm ${className}`}>
       {children}
     </div>
   )
@@ -40,7 +40,7 @@ export function MenuCard({
   return (
     <Link
       to={to}
-      className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-transform active:scale-[0.98]"
+      className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-card p-4 shadow-sm transition-transform active:scale-[0.98]"
     >
       <span className="text-3xl">{icon}</span>
       <span className="flex-1">
@@ -70,7 +70,7 @@ export function Button({
   className = '',
 }: ButtonProps) {
   const styles: Record<string, string> = {
-    primary: 'bg-[#0d3b66] text-white',
+    primary: 'bg-brand text-white',
     ghost: 'bg-slate-100 text-slate-700',
     success: 'bg-emerald-600 text-white',
     danger: 'bg-rose-600 text-white',
@@ -89,7 +89,7 @@ export function Button({
 
 export function Empty({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-2xl border border-dashed border-slate-300 bg-white p-8 text-center text-slate-500">
+    <div className="rounded-2xl border border-dashed border-slate-300 bg-card p-8 text-center text-slate-500">
       {children}
     </div>
   )

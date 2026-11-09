@@ -96,7 +96,7 @@ export default function Exercises() {
 
         <div className="greek text-xl leading-relaxed text-slate-800">
           {before}
-          <span className="font-bold text-[#0d3b66]">{result ? ex.answer : '___'}</span>
+          <span className="font-bold text-brand">{result ? ex.answer : '___'}</span>
           {after}
         </div>
         {ex.hint && <div className="mt-3 text-sm text-slate-400">💡 {ex.hint}</div>}
@@ -108,7 +108,7 @@ export default function Exercises() {
           disabled={result !== null}
           autoFocus
           placeholder="форма глагола…"
-          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-xl outline-none focus:border-[#0d3b66] disabled:bg-slate-50"
+          className="greek mt-5 w-full rounded-xl border-2 border-slate-200 px-4 py-3 text-center text-xl outline-none focus:border-brand disabled:bg-slate-50"
         />
 
         {result === null && <GreekKeyboard onInsert={(ch) => setInput((v) => v + ch)} />}
