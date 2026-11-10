@@ -70,7 +70,12 @@ export default function Test() {
 
   useEffect(() => {
     setInput('')
-  }, [index])
+    // озвучиваем слово при показе вопроса, где греческое слово видно (выбор / правда-ложь)
+    const cur = questions?.[index]
+    if (!showIntro && cur && (cur.type === 'choice' || cur.type === 'truefalse')) {
+      speakGreek(cur.word.greek)
+    }
+  }, [index, showIntro, questions])
 
   const finished = questions !== null && index >= questions.length
 
@@ -148,7 +153,6 @@ export default function Test() {
   if (!q) return <Loading />
 
   function record(correct: boolean, given: string) {
-    speakGreek(q!.word.greek) // озвучиваем слово после ответа
     setResults((rs) => [...rs, { q: q!, correct, given }])
     setIndex((i) => i + 1)
   }

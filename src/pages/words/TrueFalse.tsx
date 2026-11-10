@@ -37,7 +37,8 @@ export default function TrueFalse() {
 
   useEffect(() => {
     setAnswered(null)
-  }, [w?.id])
+    if (!showIntro && w) speakGreek(w.greek) // озвучиваем слово при показе
+  }, [w?.id, showIntro])
 
   if (s.loading || !pool) return <Loading />
   if (s.total === 0) return <NoWords />
@@ -50,7 +51,6 @@ export default function TrueFalse() {
   function answer(chosenTrue: boolean) {
     if (answered) return
     setAnswered({ chosenTrue, correct: chosenTrue === round!.isReal })
-    speakGreek(w.greek) // озвучиваем слово после ответа
   }
 
   function next() {

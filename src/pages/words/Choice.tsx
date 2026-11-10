@@ -47,7 +47,9 @@ export default function Choice() {
 
   useEffect(() => {
     setPicked(null)
-  }, [w?.id])
+    // озвучиваем слово при показе — только когда греческое слово видно
+    if (!showIntro && w && round?.greekToRu) speakGreek(w.greek)
+  }, [w?.id, showIntro, round?.greekToRu])
 
   if (s.loading || !pool) return <Loading />
   if (s.total === 0) return <NoWords />
@@ -60,7 +62,6 @@ export default function Choice() {
   function choose(opt: string) {
     if (picked) return
     setPicked(opt)
-    speakGreek(w.greek) // озвучиваем слово после ответа
   }
 
   function next() {

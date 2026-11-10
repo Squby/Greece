@@ -13,10 +13,11 @@ export default function Flashcards() {
   const [revealed, setRevealed] = useState(false)
   const [showIntro, setShowIntro] = useState(() => !introSeen('flashcards'))
 
-  // Сбрасываем «переворот» при смене слова
+  // Сбрасываем «переворот» и озвучиваем слово при его появлении
   useEffect(() => {
     setRevealed(false)
-  }, [s.current?.id])
+    if (!showIntro && s.current) speakGreek(s.current.greek)
+  }, [s.current?.id, showIntro])
 
   if (s.loading) return <Loading />
   if (s.total === 0) return <NoWords />
@@ -64,13 +65,7 @@ export default function Flashcards() {
 
       {!revealed ? (
         <div className="mt-6">
-          <Button
-            className="w-full"
-            onClick={() => {
-              setRevealed(true)
-              speakGreek(w.greek)
-            }}
-          >
+          <Button className="w-full" onClick={() => setRevealed(true)}>
             Показать перевод
           </Button>
         </div>

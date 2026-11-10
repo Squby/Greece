@@ -62,7 +62,9 @@ export default function Learn() {
     setInput('')
     setPicked(null)
     setAnswered(null)
-  }, [turn])
+    // озвучиваем слово при показе — только в режиме выбора, где греческое слово видно
+    if (!showIntro && current && format === 'choice') speakGreek(current.word.greek)
+  }, [turn, showIntro])
 
   if (!pool || queue === null) return <Loading />
   if (total === 0) return <NoWords />
@@ -77,7 +79,6 @@ export default function Learn() {
   function submit(correct: boolean, shownAnswer: string) {
     if (answered) return
     setAnswered({ correct, answer: shownAnswer })
-    speakGreek(w.greek) // озвучиваем слово после ответа
   }
 
   function checkWritten() {

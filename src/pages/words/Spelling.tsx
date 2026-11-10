@@ -33,7 +33,6 @@ export default function Spelling() {
   function check() {
     if (!input.trim()) return
     setResult(checkAnswer(input, w.greek))
-    speakGreek(w.greek) // озвучиваем слово после проверки
   }
 
   function next() {
